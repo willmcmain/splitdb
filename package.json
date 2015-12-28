@@ -1,0 +1,16 @@
+{
+  "name": "nodesplit",
+  "version": "0.0.1",
+  "description": "Web Split Program",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Will McMain",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "kerberos": "0.0.17",
+    "mongodb": "^2.1.2"
+  }
+}
