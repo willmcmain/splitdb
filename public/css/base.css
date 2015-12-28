@@ -1,0 +1,17 @@
+table.splits {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.splits tr {
+    border-top: 1px white solid;
+}
+
+.splits td {
+    padding: 15px 25px;
+}
+
+td.time {
+    text-align: right;
+}

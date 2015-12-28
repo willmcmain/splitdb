@@ -1,7 +1,9 @@
-DATA = [
+"use strict";
+
+var DATA = [
     {
         game: "Super Metroid",
-        date: new Date("2015-12-1");
+        date: new Date("2015-12-1"),
         splits: [
             {
                 name: "Ceres Escape",
@@ -19,7 +21,7 @@ DATA = [
     },
     {
         game: "Super Metroid",
-        date: new Date("2015-12-16");
+        date: new Date("2015-12-16"),
         splits: [
             {
                 name: "Ceres Escape",
@@ -37,7 +39,7 @@ DATA = [
     },
     {
         game: "Super Mario World",
-        date: new Date("2015-12-10");
+        date: new Date("2015-12-10"),
         splits: [
             {
                 name: "Yoshi's Island 2",
@@ -54,3 +56,28 @@ DATA = [
         ]
     },
 ];
+
+$(document).ready(function() {
+    for(let splitobj of DATA) {
+        var div = $('<div>');
+        div.append(
+            "<h2>" + splitobj.game
+            + " <small>" + splitobj.date
+            + "</small></h2>"
+        );
+
+        var table = $("<table>").addClass('splits');
+        var total = 0;
+        for(let split of splitobj.splits) {
+            var tr = $("<tr>");
+            total += split.time;
+            tr.append("<td>" + split.name
+                    + "</td><td class='time'>" + total
+                    + "</td>");
+            table.append(tr);
+        }
+
+        div.append(table);
+        $('#all-splits').append(div);
+    }
+});
